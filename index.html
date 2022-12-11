@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Population structure</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Population structure">
+  <meta name="author" content="Dr Axel Barlow">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/zenburn.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/custom.css"></link>
+<link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+    
+  <slide class="nobackground">
+    <article class="flexbox vcenter">
+      <span>
+        <img width='300px' src="assets/img/A1_FullColour.svg">
+      </span>
+    </article>
+  </slide>
+    <slide class="title-slide segue nobackground">
+  
+  <aside class="gdbar">
+    <img src="assets/img/LA_Full_colour_reversed.svg">
+  </aside>
+  
+  <hgroup class="auto-fadein">
+    <h1>Population structure</h1>
+    <h2>BNS-2002: Genes, Development, and Evolution</h2>
+    <p>Dr Axel Barlow<br/>email: a.barlow@bangor.ac.uk</p>
+  </hgroup>
+  
+  <article></article>  
+      
+  <footer class = 'license'>
+    <a href='http://creativecommons.org/licenses/by-nc-sa/3.0/'>
+    <img width = '80px' src = 'http://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png'>
+    </a>
+  </footer>
+  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  
+  <article data-timings="">
+    <!-- adding bold and italic options -->
+
+<style>
+em {
+  font-style: italic
+}
+strong {
+  font-weight: bold;
+}
+</style>
+
+<h2>Phylogenetics and population genetics lectures</h2>
+
+<ul>
+<li>Key concepts and Single locus phylogenetics</li>
+<li>Multi-locus phylogenetics</li>
+<li><strong>Population structure</strong>
+
+<ul>
+<li><strong>Theory</strong></li>
+<li><strong>Methods</strong></li>
+<li><strong>Discoveries</strong></li>
+</ul></li>
+<li>Conservation genetics</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  
+  <hgroup>
+    <h2>How does the tree form: lineage sorting</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><img src="./assets/img/linsort1.svg" alt="plot of chunk unnamed-chunk-1" width="100%" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  
+  <hgroup>
+    <h2>How does the tree form: lineage sorting</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><img src="./assets/img/linsort2.svg" alt="plot of chunk unnamed-chunk-2" width="100%" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  
+  <hgroup>
+    <h2>How does the tree form: lineage sorting</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><img src="./assets/img/linsort3.svg" alt="plot of chunk unnamed-chunk-3" width="100%" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  
+  <hgroup>
+    <h2>How does the tree form: lineage sorting</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><img src="./assets/img/linsort4.svg" alt="plot of chunk unnamed-chunk-4" width="100%" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-6" style="background:;">
+  
+  <hgroup>
+    <h2>How does the tree form: lineage sorting</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><img src="./assets/img/linsort5.svg" alt="plot of chunk unnamed-chunk-5" width="100%" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-7" style="background:;">
+  
+  <hgroup>
+    <h2>Population structure</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <ul>
+<li>Phylogenetic approaches less suited to recent population divergence events</li>
+<li>Insufficient time for lineage sorting</li>
+<li>After population isolation, allele frequencies in subpopulations will diverge under drift</li>
+<li>Differences in allele frequencies provide a way of identifying populations and measuring their divergence</li>
+<li>The extent of structuring depends on the magnitude of drift</li>
+<li>Structure can still persist with low level gene flow</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-8" style="background:;">
+  
+  <hgroup>
+    <h2>Simulator</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <iframe src = 'https://www.whfreeman.com/BrainHoney/Resource/6716/SitebuilderUploads/Hillis2e/Student%20Resources/Animated%20Tutorials/pol2e_at_1502_genetic_drift_simulation/pol2e_at_1502_genetic_drift_simulation.html' height='600px'></iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-9" style="background:;">
+  
+  <hgroup>
+    <h2>Why is it important?</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <h3>Populations play a central role in:</h3>
+
+<ul>
+<li>Evolution</li>
+<li>Ecology</li>
+<li>Conservation</li>
+</ul>
+
+<h3>We need to know:</h3>
+
+<ul>
+<li>How many populations there are</li>
+<li>Where do they occur spatially</li>
+<li>How divergent are they</li>
+<li>Do they exchange migrants</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="segue dark" id="slide-10" style="background:;">
+  
+  <hgroup>
+    <h2>Population structure - methods</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-11" style="background:;">
+  
+  <hgroup>
+    <h2>Getting the data</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <h3>Data is almost always multilocus. Many approaches have been and gone</h3>
+
+<ul>
+<li>RAPDs</li>
+<li>RFLPs</li>
+<li>AFLPs</li>
+<li>Microsatellites</li>
+</ul>
+
+<h3>Current methods are all single nucleotide polymorphism (SNP) based</h3>
+
+<ul>
+<li>RADseq</li>
+<li>SNP array capture</li>
+<li>Whole genome resequencing</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-12" style="background:;">
+  
+  <hgroup>
+    <h2>Fst</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <ul>
+<li>Fundamental approach</li>
+<li>Measures change in expected heterozygosity for subpopulations vs a single (big) population</li>
+<li>Ranges from 0 (no subpopulations) to 1 (subpopulations fixed for different alleles)</li>
+<li>Classically a single locus method, can be adapted for multiple loci</li>
+<li>Especially useful for detecting selection and other processes</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-13" style="background:;">
+  
+  <hgroup>
+    <h2>Principal components analysis</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <ul>
+<li>used for decades, modern implementation introduced in 2006</li>
+<li>Analysis of individuals</li>
+<li>model free (does not assume populations)</li>
+<li>Input is individual genotypes</li>
+<li>PCA find a single continuous variable that explains largest proportion of the variation (PC1)</li>
+<li>PC2 explains largest proportion not explained by PC1, etc...</li>
+<li>Allows exploration of where the populations are</li>
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="assets/fig/unnamed-chunk-6-1.png" alt="plot of chunk unnamed-chunk-6" width="100%" style="display: block; margin: auto;" /></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-14" style="background:;">
+  
+  <hgroup>
+    <h2>STRUCTURE</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <ul>
+<li>Introduced in 2000</li>
+<li>NGSadmix is STRUCTURE adapted for whole genome data</li>
+<li>User tells program the number of populations (K)</li>
+<li>Input is individual genotypes</li>
+<li>STRUCTURE assigns individuals to K populations maximising Hardy-Weinberg and linkage equillibrium</li>
+<li>Also allows individuals to be admixed</li>
+<li>Major challenge is determining K: either need strong prior knowledge, or test a range</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-15">
+<hgroup>
+  <h2>STRUCTURE example</h2>
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p><img src="./assets/img/Map_of_samples_and_population_structure_of_North_Africa_and_neighboring_populations.png" alt="plot of chunk unnamed-chunk-7" width="100%" style="display: block; margin: auto;" /></p>
+
+</article>
+<!-- Presenter Notes -->
+
+</slide>
+<slide class="segue dark" id="slide-16" style="background:;">
+  
+  <hgroup>
+    <h2>Population structure: discoveries</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-17" style="background:;">
+  
+  <hgroup>
+    <h2>Leopards</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <ul>
+<li>Most widely distributed big cat</li>
+<li>Fossil record indicates African origin</li>
+<li>No range wide population genetics study</li>
+<li>26 museum and modern genomes</li>
+<li>8 subspecies, more or less supported by mtDNA</li>
+<li>African plus 7 Asian subspecies</li>
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="./assets/img/leopard_map.svg" alt="plot of chunk unnamed-chunk-8" width="100%" style="display: block; margin: auto;" /></p>
+
+<p><img src="./assets/img/drawing.svg" alt="plot of chunk unnamed-chunk-9" width="80%" style="display: block; margin: auto;" /></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-18" style="background:;">
+  
+  <hgroup>
+    <h2>Leopards</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p><img src="./assets/img/leopard_pca.svg" alt="plot of chunk unnamed-chunk-10" width="100%" style="display: block; margin: auto;" /></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="./assets/img/leopard_map.svg" alt="plot of chunk unnamed-chunk-11" width="100%" style="display: block; margin: auto;" /></p>
+
+<p><img src="./assets/img/drawing.svg" alt="plot of chunk unnamed-chunk-12" width="80%" style="display: block; margin: auto;" /></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-19" style="background:;">
+  
+  <hgroup>
+    <h2>Leopards</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p><img src="./assets/img/leopard_struct.svg" alt="plot of chunk unnamed-chunk-13" width="100%" style="display: block; margin: auto;" /></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="./assets/img/leopard_map.svg" alt="plot of chunk unnamed-chunk-14" width="100%" style="display: block; margin: auto;" /></p>
+
+<p><img src="./assets/img/drawing.svg" alt="plot of chunk unnamed-chunk-15" width="80%" style="display: block; margin: auto;" /></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-20" style="background:;">
+  
+  <hgroup>
+    <h2>Leopard reading</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><embed src="./assets/img/Paijmans et al. - 2021 - African and Asian leopards are highly differentiated at the genomic level.pdf" title="plot of chunk unnamed-chunk-16" width="100%" height="500" type="application/pdf" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-21" style="background:;">
+  
+  <hgroup>
+    <h2>Brown hyena (<em>Parahyeana brunnea</em>)</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <ul>
+<li>Rarest of 4 hyena species</li>
+<li>Southern African endemic</li>
+<li>Listed near threatened by IUCN</li>
+<li>Very low genetic diversity</li>
+<li>Previous msat studies found no detectable structure</li>
+<li>Hence no management units for conservation</li>
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="./assets/img/brown.webp" alt="plot of chunk unnamed-chunk-17" width="100%" style="display: block; margin: auto;" /></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-22" style="background:;">
+  
+  <hgroup>
+    <h2>Brown hyena (<em>Parahyeana brunnea</em>)</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p><img src="./assets/img/brown_pca.svg" alt="plot of chunk unnamed-chunk-18" width="100%" style="display: block; margin: auto;" /></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="./assets/img/brown_map.svg" alt="plot of chunk unnamed-chunk-19" width="100%" style="display: block; margin: auto;" /></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-23" style="background:;">
+  
+  <hgroup>
+    <h2>Brown hyena (<em>Parahyeana brunnea</em>)</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><img src="./assets/img/brown_pcas.svg" alt="plot of chunk unnamed-chunk-20" width="90%" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-24" style="background:;">
+  
+  <hgroup>
+    <h2>Brown hyena reading</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><embed src="./assets/img/Westbury et al. - 2018.pdf" title="plot of chunk unnamed-chunk-21" width="100%" height="500" type="application/pdf" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-25" style="background:;">
+  
+  <hgroup>
+    <h2>Tiger sharks</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <ul>
+<li>Oceanic shark</li>
+<li>Apex predator, ecologically flexible</li>
+<li>Global distribution</li>
+<li>Some show seasonal migration</li>
+<li>Can move 1000&#39;s km</li>
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="./assets/img/Tiger-Shark-Pictures.jpg" alt="plot of chunk unnamed-chunk-22" width="100%" style="display: block; margin: auto;" /></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-26" style="background:white;">
+  
+  <hgroup>
+    <h2>Tiger sharks</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><img src="./assets/img/tiger_str.svg" alt="plot of chunk unnamed-chunk-23" width="100%" style="display: block; margin: auto;" /></p>
+
+<p><img src="./assets/img/tiger_map.svg" alt="plot of chunk unnamed-chunk-24" width="85%" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-27" style="background:;">
+  
+  <hgroup>
+    <h2>Tiger shark reading</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><embed src="./assets/img/esab046.pdf" title="plot of chunk unnamed-chunk-25" width="100%" height="500" type="application/pdf" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-28" style="background:;">
+  
+  <hgroup>
+    <h2>Giraffes</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <ul>
+<li>Confused subspecies taxonomy</li>
+<li>Nine subspecies more or less accepted</li>
+<li>Overall listed as vulnerable by IUCN</li>
+<li>Some subspecies are critically endangered</li>
+<li>Previous multilocus phylogenetics study proposed for species</li>
+<li>Controversial!</li>
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="./assets/img/800px-Rothschild's_Giraffe_(Giraffa_camelopardalis_rothschildi)_male_(7068054987),_crop_&_edit.jpg" alt="plot of chunk unnamed-chunk-26" width="80%" style="display: block; margin: auto;" /></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-29" style="background:;">
+  
+  <hgroup>
+    <h2>Giraffes</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p><img src="./assets/img/giraffe_map.svg" alt="plot of chunk unnamed-chunk-27" width="100%" style="display: block; margin: auto;" /></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="./assets/img/giraffe_pca.svg" alt="plot of chunk unnamed-chunk-28" width="100%" style="display: block; margin: auto;" /></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-30" style="background:;">
+  
+  <hgroup>
+    <h2>Giraffes</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p><img src="./assets/img/giraffe_map.svg" alt="plot of chunk unnamed-chunk-29" width="100%" style="display: block; margin: auto;" /></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="./assets/img/giraffe_stru.svg" alt="plot of chunk unnamed-chunk-30" width="100%" style="display: block; margin: auto;" /></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-31" style="background:;">
+  
+  <hgroup>
+    <h2>Giraffes</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><img src="./assets/img/giraffe_fin.svg" alt="plot of chunk unnamed-chunk-31" width="100%" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-32" style="background:;">
+  
+  <hgroup>
+    <h2>Giraffe reading</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><embed src="./assets/img/giraffe.pdf" title="plot of chunk unnamed-chunk-32" width="100%" height="500" type="application/pdf" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="thank-you-slide segue nobackground" id="slide-33">
+  <aside class="gdbar right"><img src="assets/img/LA_Full_colour_reversed.svg"></aside>
+  <article class="flexbox vleft auto-fadein">
+    <h2>Next time</h2>
+    <p><strong>Conservation genetics</strong></p>
+
+  </article>
+
+  <p class="auto-fadein" data-config-contact="">
+    
+  </p>
+</slide>
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='NA'>
+         1
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='How does the tree form: lineage sorting'>
+         2
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='How does the tree form: lineage sorting'>
+         3
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='How does the tree form: lineage sorting'>
+         4
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='How does the tree form: lineage sorting'>
+         5
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='How does the tree form: lineage sorting'>
+         6
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='Population structure'>
+         7
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='Simulator'>
+         8
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='Why is it important?'>
+         9
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='Population structure - methods'>
+         10
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='Getting the data'>
+         11
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title='Fst'>
+         12
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title='Principal components analysis'>
+         13
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=14 title='STRUCTURE'>
+         14
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=15 title='STRUCTURE example'>
+         15
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=16 title='Population structure: discoveries'>
+         16
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=17 title='Leopards'>
+         17
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=18 title='Leopards'>
+         18
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=19 title='Leopards'>
+         19
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=20 title='Leopard reading'>
+         20
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=21 title='Brown hyena (<em>Parahyeana brunnea</em>)'>
+         21
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=22 title='Brown hyena (<em>Parahyeana brunnea</em>)'>
+         22
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=23 title='Brown hyena (<em>Parahyeana brunnea</em>)'>
+         23
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=24 title='Brown hyena reading'>
+         24
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=25 title='Tiger sharks'>
+         25
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=26 title='Tiger sharks'>
+         26
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=27 title='Tiger shark reading'>
+         27
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=28 title='Giraffes'>
+         28
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=29 title='Giraffes'>
+         29
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=30 title='Giraffes'>
+         30
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=31 title='Giraffes'>
+         31
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=32 title='Giraffe reading'>
+         32
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=33 title='Next time'>
+         33
+      </a>
+    </li>
+    
+    </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>

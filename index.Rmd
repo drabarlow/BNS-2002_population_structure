@@ -1,0 +1,458 @@
+---
+title       : "Population structure"
+subtitle    : "BNS-2002: Genes, Development, and Evolution"
+author      : Dr Axel Barlow
+job         : "email: a.barlow@bangor.ac.uk"
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : zenburn      # {zenburn, tomorrow, solarized-dark, ...}
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {selfcontained, standalone, draft}
+knit        : slidify::knit2slides
+logo        : LA_Full_colour_reversed.svg
+biglogo     : A1_FullColour.svg
+assets      : {assets: ../../assets}
+license     : by-nc-sa
+
+---
+
+```{r setup, include = FALSE}
+library(tidyverse)
+library(gganimate)
+library(RColorBrewer)
+library(knitr)
+library(ape)
+```
+
+<!-- adding bold and italic options -->
+<style>
+em {
+  font-style: italic
+}
+strong {
+  font-weight: bold;
+}
+</style>
+
+## Phylogenetics and population genetics lectures
+
+- Key concepts and Single locus phylogenetics
+- Multi-locus phylogenetics
+- **Population structure**
+  - **Theory**
+  - **Methods**
+  - **Discoveries**
+- Conservation genetics
+
+---
+
+## How does the tree form: lineage sorting
+
+```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center"}
+  include_graphics("./assets/img/linsort1.svg")
+```
+
+---
+
+## How does the tree form: lineage sorting
+
+```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center"}
+  include_graphics("./assets/img/linsort2.svg")
+```
+
+---
+
+## How does the tree form: lineage sorting
+
+```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center"}
+  include_graphics("./assets/img/linsort3.svg")
+```
+
+---
+
+## How does the tree form: lineage sorting
+
+```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center"}
+  include_graphics("./assets/img/linsort4.svg")
+```
+
+---
+
+## How does the tree form: lineage sorting
+
+```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center"}
+  include_graphics("./assets/img/linsort5.svg")
+```
+
+---
+
+## Population structure
+
+- Phylogenetic approaches less suited to recent population divergence events
+- Insufficient time for lineage sorting
+- After population isolation, allele frequencies in subpopulations will diverge under drift
+- Differences in allele frequencies provide a way of identifying populations and measuring their divergence
+- The extent of structuring depends on the magnitude of drift
+- Structure can still persist with low level gene flow
+
+---
+
+## Simulator
+
+<iframe src = 'https://www.whfreeman.com/BrainHoney/Resource/6716/SitebuilderUploads/Hillis2e/Student%20Resources/Animated%20Tutorials/pol2e_at_1502_genetic_drift_simulation/pol2e_at_1502_genetic_drift_simulation.html' height='600px'></iframe>
+
+---
+
+## Why is it important?
+
+### Populations play a central role in:
+  - Evolution
+  - Ecology
+  - Conservation
+
+### We need to know:
+  - How many populations there are
+  - Where do they occur spatially
+  - How divergent are they
+  - Do they exchange migrants
+
+--- .segue .dark 
+
+## Population structure - methods
+
+---
+
+## Getting the data
+
+### Data is almost always multilocus. Many approaches have been and gone
+
+- RAPDs
+- RFLPs
+- AFLPs
+- Microsatellites
+
+### Current methods are all single nucleotide polymorphism (SNP) based
+
+- RADseq
+- SNP array capture
+- Whole genome resequencing
+
+---
+
+## Fst
+
+- Fundamental approach
+- Measures change in expected heterozygosity for subpopulations vs a single (big) population
+- Ranges from 0 (no subpopulations) to 1 (subpopulations fixed for different alleles)
+- Classically a single locus method, can be adapted for multiple loci
+- Especially useful for detecting selection and other processes
+
+--- &twocol
+
+## Principal components analysis
+
+*** =left
+
+- used for decades, modern implementation introduced in 2006
+- Analysis of individuals
+- model free (does not assume populations)
+- Input is individual genotypes
+- PCA find a single continuous variable that explains largest proportion of the variation (PC1)
+- PC2 explains largest proportion not explained by PC1, etc...
+- Allows exploration of where the populations are
+
+*** =right
+
+```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align='center'}
+
+# assign colours to taxa - taken from RColorBrewer "paired"
+ing=c("#E31A1C")
+spe=c("#1F78B4")
+kan=c("#FB9A99")
+ere=c("#33A02C")
+lad=c("#B2DF8A")
+ros=c("#6A3D9A")
+ros2=c("#CAB2D6")
+kud=c("#FF7F00")
+pra=c("#FDBF6F")
+mar=c("#A6CEE3")
+arc=c("#B15928")
+
+# set up taxcol variable
+taxcol=c(pra,kan,ros,ing,kud,spe,ere)
+
+# calculate PCA
+t <- read.table("./assets/data/no_HV72_for_PCA_bamlist.covMat")
+e <- eigen(t)
+
+# plot PCs 1 and 2
+par(mar=c(5,5,4,1), xpd=T)
+plot(e$vectors[,1:2],
+	xlim=c(-0.4,0.6), ylim=c(-0.5,1),
+	pch=21, bg=taxcol, cex=1.8,
+	main="PCA of 487,747 filtered transversion sites",
+	xlab="PC1: 44.3% of variation", ylab="PC2: 16.5% of variation", cex.lab=1.2
+)
+```
+
+---
+
+## STRUCTURE
+
+- Introduced in 2000
+- NGSadmix is STRUCTURE adapted for whole genome data
+- User tells program the number of populations (K)
+- Input is individual genotypes
+- STRUCTURE assigns individuals to K populations maximising Hardy-Weinberg and linkage equillibrium
+- Also allows individuals to be admixed
+- Major challenge is determining K: either need strong prior knowledge, or test a range
+
+--- &vcenter
+
+## STRUCTURE example
+
+```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center"}
+include_graphics("./assets/img/Map_of_samples_and_population_structure_of_North_Africa_and_neighboring_populations.png")
+```
+
+--- .segue .dark 
+
+## Population structure: discoveries
+
+--- &twocol
+
+## Leopards
+
+*** =left
+
+- Most widely distributed big cat
+- Fossil record indicates African origin
+- No range wide population genetics study
+- 26 museum and modern genomes
+- 8 subspecies, more or less supported by mtDNA
+- African plus 7 Asian subspecies
+
+*** =right
+
+```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center"}
+include_graphics("./assets/img/leopard_map.svg")
+```
+
+```{r, out.width = "80%", dpi = 300, echo = FALSE, fig.align = "center"}
+include_graphics("./assets/img/drawing.svg")
+```
+
+--- &twocol
+
+## Leopards
+
+*** =left
+
+```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center"}
+include_graphics("./assets/img/leopard_pca.svg")
+```
+
+*** =right
+
+```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center"}
+include_graphics("./assets/img/leopard_map.svg")
+```
+
+```{r, out.width = "80%", dpi = 300, echo = FALSE, fig.align = "center"}
+include_graphics("./assets/img/drawing.svg")
+```
+
+--- &twocol
+
+## Leopards
+
+*** =left
+
+```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center"}
+include_graphics("./assets/img/leopard_struct.svg")
+```
+
+*** =right
+
+```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center"}
+include_graphics("./assets/img/leopard_map.svg")
+```
+
+```{r, out.width = "80%", dpi = 300, echo = FALSE, fig.align = "center"}
+include_graphics("./assets/img/drawing.svg")
+```
+
+---
+
+## Leopard reading
+
+```{r, out.width = "100%", out.height=500, dpi = 300, echo = FALSE}
+  include_graphics("./assets/img/Paijmans et al. - 2021 - African and Asian leopards are highly differentiated at the genomic level.pdf")
+```
+
+--- &twocol
+
+## Brown hyena (*Parahyeana brunnea*)
+
+*** =left
+
+- Rarest of 4 hyena species
+- Southern African endemic
+- Listed near threatened by IUCN
+- Very low genetic diversity
+- Previous msat studies found no detectable structure
+- Hence no management units for conservation
+
+*** =right
+
+```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center"}
+include_graphics("./assets/img/brown.webp")
+```
+
+--- &twocol
+
+## Brown hyena (*Parahyeana brunnea*)
+
+*** =left
+
+```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center"}
+include_graphics("./assets/img/brown_pca.svg")
+```
+
+*** =right
+
+```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center"}
+include_graphics("./assets/img/brown_map.svg")
+```
+
+---
+
+## Brown hyena (*Parahyeana brunnea*)
+
+```{r, out.width = "90%", dpi = 300, echo = FALSE, fig.align = "center"}
+include_graphics("./assets/img/brown_pcas.svg")
+```
+
+---
+
+## Brown hyena reading
+
+```{r, out.width = "100%", out.height=500, dpi = 300, echo = FALSE}
+  include_graphics("./assets/img/Westbury et al. - 2018.pdf")
+```
+
+--- &twocol
+
+## Tiger sharks
+
+*** =left
+
+- Oceanic shark
+- Apex predator, ecologically flexible
+- Global distribution
+- Some show seasonal migration
+- Can move 1000's km
+
+*** =right
+
+```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center"}
+include_graphics("./assets/img/Tiger-Shark-Pictures.jpg")
+```
+
+--- bg:white
+
+## Tiger sharks
+
+```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center"}
+include_graphics("./assets/img/tiger_str.svg")
+```
+
+```{r, out.width = "85%", dpi = 300, echo = FALSE, fig.align = "center"}
+include_graphics("./assets/img/tiger_map.svg")
+```
+
+---
+
+## Tiger shark reading
+
+```{r, out.width = "100%", out.height=500, dpi = 300, echo = FALSE}
+  include_graphics("./assets/img/esab046.pdf")
+```
+
+--- &twocol
+
+## Giraffes
+
+*** =left
+
+- Confused subspecies taxonomy
+- Nine subspecies more or less accepted
+- Overall listed as vulnerable by IUCN
+- Some subspecies are critically endangered
+- Previous multilocus phylogenetics study proposed for species
+- Controversial!
+
+*** =right
+
+```{r, out.width = "80%", dpi = 300, echo = FALSE, fig.align = "center"}
+  include_graphics("./assets/img/800px-Rothschild's_Giraffe_(Giraffa_camelopardalis_rothschildi)_male_(7068054987),_crop_&_edit.jpg")
+```
+
+--- &twocol
+
+## Giraffes
+
+*** =left
+
+```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center"}
+  include_graphics("./assets/img/giraffe_map.svg")
+```
+
+*** =right
+
+```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center"}
+  include_graphics("./assets/img/giraffe_pca.svg")
+```
+
+--- &twocol
+
+## Giraffes
+
+*** =left
+
+```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center"}
+  include_graphics("./assets/img/giraffe_map.svg")
+```
+
+*** =right
+
+```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center"}
+  include_graphics("./assets/img/giraffe_stru.svg")
+```
+
+---
+
+## Giraffes
+
+```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center"}
+  include_graphics("./assets/img/giraffe_fin.svg")
+```
+
+---
+
+## Giraffe reading
+
+```{r, out.width = "100%", out.height=500, dpi = 300, echo = FALSE}
+  include_graphics("./assets/img/giraffe.pdf")
+```
+
+--- &thankyou
+
+## Next time
+
+**Conservation genetics**
+
+
+
+
+
