@@ -76,7 +76,7 @@ strong {
 - Insufficient time for lineage sorting
 - After population isolation, allele frequencies in subpopulations will diverge under drift
 - Differences in allele frequencies provide a way of identifying populations and measuring their divergence
-- The extent of structuring depends on the magnitude of drift
+- The extent of structuring depends on the magnitude of drift and gene flow
 - Structure can still persist with low level gene flow
 
 ---
@@ -133,7 +133,7 @@ strong {
 
 --- &twocol
 
-## Principal components analysis
+## Principal components analysis (PCA)
 
 *** =left
 
