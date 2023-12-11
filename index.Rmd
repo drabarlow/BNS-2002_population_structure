@@ -48,7 +48,7 @@ strong {
 
 ## How does the tree form: lineage sorting
 
-```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center"}
+```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center", fig.cap = ""}
   include_graphics("./assets/img/linsort1.svg")
 ```
 
@@ -56,7 +56,7 @@ strong {
 
 ## How does the tree form: lineage sorting
 
-```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center"}
+```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center", fig.cap = ""}
   include_graphics("./assets/img/linsort2.svg")
 ```
 
@@ -64,7 +64,7 @@ strong {
 
 ## How does the tree form: lineage sorting
 
-```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center"}
+```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center", fig.cap = ""}
   include_graphics("./assets/img/linsort3.svg")
 ```
 
@@ -72,7 +72,7 @@ strong {
 
 ## How does the tree form: lineage sorting
 
-```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center"}
+```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center", fig.cap = ""}
   include_graphics("./assets/img/linsort4.svg")
 ```
 
@@ -80,7 +80,7 @@ strong {
 
 ## How does the tree form: lineage sorting
 
-```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center"}
+```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center", fig.cap = ""}
   include_graphics("./assets/img/linsort5.svg")
 ```
 
@@ -141,11 +141,43 @@ strong {
 
 ## Fst
 
-- Fundamental approach
+Ht = expected* heterozygosity in total population
+
+Hs = average expected* heterozygosity within subpopulations
+
+*under HWE expectations
+
+### **Fst = Ht - Hs /  Ht**
+
+- Based on allele frequencies
 - Measures change in expected heterozygosity for subpopulations vs a single (big) population
 - Ranges from 0 (no subpopulations) to 1 (subpopulations fixed for different alleles)
-- Classically a single locus method, can be adapted for multiple loci
-- Especially useful for detecting selection and other processes
+- Indicates proportion of total variation structured between subpopulations
+- Also useful for detecting selection
+
+---
+
+## Fst
+
+```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center", fig.cap = ""}
+  include_graphics("./assets/img/fst1.svg")
+```
+
+---
+
+## Fst
+
+```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center", fig.cap = ""}
+  include_graphics("./assets/img/fst2.svg")
+```
+
+---
+
+## Fst
+
+```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center", fig.cap = ""}
+  include_graphics("./assets/img/fst3.svg")
+```
 
 --- &twocol
 
@@ -155,6 +187,7 @@ strong {
 
 - used for decades, modern implementation introduced in 2006
 - Analysis of individuals
+- Used allele variance relative to average
 - model free (does not assume populations)
 - Input is individual genotypes
 - PCA find a single continuous variable that explains largest proportion of the variation (PC1)
@@ -163,7 +196,7 @@ strong {
 
 *** =right
 
-```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align='center'}
+```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align='center', fig.cap = ""}
 
 # assign colours to taxa - taken from RColorBrewer "paired"
 ing=c("#E31A1C")
@@ -211,13 +244,46 @@ plot(e$vectors[,1:2],
 
 ## STRUCTURE example
 
-```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center"}
+```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center", fig.cap = ""}
 include_graphics("./assets/img/Map_of_samples_and_population_structure_of_North_Africa_and_neighboring_populations.png")
 ```
 
 --- .segue .dark 
 
 ## Population structure: discoveries
+
+--- &twocol
+
+## Hooded and carrion crows
+
+*** =left
+
+```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center", fig.cap = ""}
+include_graphics("./assets/img/Nebelkrähe_Corvus_cornix,_Belvedere,_Wien.jpg")
+```
+
+*** =right
+
+```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center", fig.cap = ""}
+include_graphics("./assets/img/Distribution_of_carrion_and_hooded_crows_across_Europe.jpg")
+```
+
+---
+
+## Genome-wide Fst
+
+```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center", fig.cap = ""}
+include_graphics("./assets/img/cro.png")
+```
+
+---
+
+## Crow reading
+
+```{r, out.width = "100%", out.height=500, dpi = 300, echo = FALSE, fig.cap = ""}
+  include_graphics("./assets/img/1111crow410.full.pdf")
+```
+
 
 --- &twocol
 
@@ -234,11 +300,11 @@ include_graphics("./assets/img/Map_of_samples_and_population_structure_of_North_
 
 *** =right
 
-```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center"}
+```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center", fig.cap = ""}
 include_graphics("./assets/img/leopard_map.svg")
 ```
 
-```{r, out.width = "80%", dpi = 300, echo = FALSE, fig.align = "center"}
+```{r, out.width = "80%", dpi = 300, echo = FALSE, fig.align = "center", fig.cap = ""}
 include_graphics("./assets/img/drawing.svg")
 ```
 
@@ -248,17 +314,17 @@ include_graphics("./assets/img/drawing.svg")
 
 *** =left
 
-```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center"}
+```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center", fig.cap = ""}
 include_graphics("./assets/img/leopard_pca.svg")
 ```
 
 *** =right
 
-```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center"}
+```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center", fig.cap = ""}
 include_graphics("./assets/img/leopard_map.svg")
 ```
 
-```{r, out.width = "80%", dpi = 300, echo = FALSE, fig.align = "center"}
+```{r, out.width = "80%", dpi = 300, echo = FALSE, fig.align = "center", fig.cap = ""}
 include_graphics("./assets/img/drawing.svg")
 ```
 
@@ -268,17 +334,17 @@ include_graphics("./assets/img/drawing.svg")
 
 *** =left
 
-```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center"}
+```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center", fig.cap = ""}
 include_graphics("./assets/img/leopard_struct.svg")
 ```
 
 *** =right
 
-```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center"}
+```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center", fig.cap = ""}
 include_graphics("./assets/img/leopard_map.svg")
 ```
 
-```{r, out.width = "80%", dpi = 300, echo = FALSE, fig.align = "center"}
+```{r, out.width = "80%", dpi = 300, echo = FALSE, fig.align = "center", fig.cap = ""}
 include_graphics("./assets/img/drawing.svg")
 ```
 
@@ -286,59 +352,8 @@ include_graphics("./assets/img/drawing.svg")
 
 ## Leopard reading
 
-```{r, out.width = "100%", out.height=500, dpi = 300, echo = FALSE}
+```{r, out.width = "100%", out.height=500, dpi = 300, echo = FALSE, fig.cap = ""}
   include_graphics("./assets/img/Paijmans et al. - 2021 - African and Asian leopards are highly differentiated at the genomic level.pdf")
-```
-
---- &twocol
-
-## Brown hyena (*Parahyeana brunnea*)
-
-*** =left
-
-- Rarest of 4 hyena species
-- Southern African endemic
-- Listed near threatened by IUCN
-- Very low genetic diversity
-- Previous msat studies found no detectable structure
-- Hence no management units for conservation
-
-*** =right
-
-```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center"}
-include_graphics("./assets/img/brown.webp")
-```
-
---- &twocol
-
-## Brown hyena (*Parahyeana brunnea*)
-
-*** =left
-
-```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center"}
-include_graphics("./assets/img/brown_pca.svg")
-```
-
-*** =right
-
-```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center"}
-include_graphics("./assets/img/brown_map.svg")
-```
-
----
-
-## Brown hyena (*Parahyeana brunnea*)
-
-```{r, out.width = "90%", dpi = 300, echo = FALSE, fig.align = "center"}
-include_graphics("./assets/img/brown_pcas.svg")
-```
-
----
-
-## Brown hyena reading
-
-```{r, out.width = "100%", out.height=500, dpi = 300, echo = FALSE}
-  include_graphics("./assets/img/Westbury et al. - 2018.pdf")
 ```
 
 --- &twocol
@@ -355,7 +370,7 @@ include_graphics("./assets/img/brown_pcas.svg")
 
 *** =right
 
-```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center"}
+```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center", fig.cap = ""}
 include_graphics("./assets/img/Tiger-Shark-Pictures.jpg")
 ```
 
@@ -363,11 +378,11 @@ include_graphics("./assets/img/Tiger-Shark-Pictures.jpg")
 
 ## Tiger sharks
 
-```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center"}
+```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center", fig.cap = ""}
 include_graphics("./assets/img/tiger_str.svg")
 ```
 
-```{r, out.width = "85%", dpi = 300, echo = FALSE, fig.align = "center"}
+```{r, out.width = "85%", dpi = 300, echo = FALSE, fig.align = "center", fig.cap = ""}
 include_graphics("./assets/img/tiger_map.svg")
 ```
 
@@ -375,7 +390,7 @@ include_graphics("./assets/img/tiger_map.svg")
 
 ## Tiger shark reading
 
-```{r, out.width = "100%", out.height=500, dpi = 300, echo = FALSE}
+```{r, out.width = "100%", out.height=500, dpi = 300, echo = FALSE, fig.cap = ""}
   include_graphics("./assets/img/esab046.pdf")
 ```
 
@@ -389,13 +404,27 @@ include_graphics("./assets/img/tiger_map.svg")
 - Nine subspecies more or less accepted
 - Overall listed as vulnerable by IUCN
 - Some subspecies are critically endangered
-- Previous multilocus phylogenetics study proposed for species
-- Controversial!
 
 *** =right
 
-```{r, out.width = "80%", dpi = 300, echo = FALSE, fig.align = "center"}
+```{r, out.width = "80%", dpi = 300, echo = FALSE, fig.align = "center", fig.cap = ""}
   include_graphics("./assets/img/800px-Rothschild's_Giraffe_(Giraffa_camelopardalis_rothschildi)_male_(7068054987),_crop_&_edit.jpg")
+```
+
+---
+
+## Four giraffe species?
+
+```{r, out.width = "100%", out.height=500, dpi = 300, echo = FALSE, fig.cap = ""}
+  include_graphics("./assets/img/Fennessy et al. - 2016 - Multi-locus Analyses Reveal Four Giraffe Species Instead of One.pdf")
+```
+
+---
+
+## Four giraffe species?
+
+```{r, out.width = "100%", out.height=500, dpi = 300, echo = FALSE, fig.cap = ""}
+  include_graphics("./assets/img/Bercovitch et al. - 2017 - How many species of giraffe are there.pdf")
 ```
 
 --- &twocol
@@ -404,13 +433,13 @@ include_graphics("./assets/img/tiger_map.svg")
 
 *** =left
 
-```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center"}
+```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center", fig.cap = ""}
   include_graphics("./assets/img/giraffe_map.svg")
 ```
 
 *** =right
 
-```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center"}
+```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center", fig.cap = ""}
   include_graphics("./assets/img/giraffe_pca.svg")
 ```
 
@@ -420,13 +449,13 @@ include_graphics("./assets/img/tiger_map.svg")
 
 *** =left
 
-```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center"}
+```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center", fig.cap = ""}
   include_graphics("./assets/img/giraffe_map.svg")
 ```
 
 *** =right
 
-```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center"}
+```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center", fig.cap = ""}
   include_graphics("./assets/img/giraffe_stru.svg")
 ```
 
@@ -434,7 +463,7 @@ include_graphics("./assets/img/tiger_map.svg")
 
 ## Giraffes
 
-```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center"}
+```{r, out.width = "100%", dpi = 300, echo = FALSE, fig.align = "center", fig.cap = ""}
   include_graphics("./assets/img/giraffe_fin.svg")
 ```
 
@@ -442,7 +471,7 @@ include_graphics("./assets/img/tiger_map.svg")
 
 ## Giraffe reading
 
-```{r, out.width = "100%", out.height=500, dpi = 300, echo = FALSE}
+```{r, out.width = "100%", out.height=500, dpi = 300, echo = FALSE, fig.cap = ""}
   include_graphics("./assets/img/giraffe.pdf")
 ```
 

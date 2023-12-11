@@ -42,31 +42,31 @@ strong {
 
 ## How does the tree form: lineage sorting
 
-<img src="./assets/img/linsort1.svg" alt="plot of chunk unnamed-chunk-1" width="100%" style="display: block; margin: auto;" />
+<img src="./assets/img/linsort1.svg" width="100%" style="display: block; margin: auto;" />
 
 ---
 
 ## How does the tree form: lineage sorting
 
-<img src="./assets/img/linsort2.svg" alt="plot of chunk unnamed-chunk-2" width="100%" style="display: block; margin: auto;" />
+<img src="./assets/img/linsort2.svg" width="100%" style="display: block; margin: auto;" />
 
 ---
 
 ## How does the tree form: lineage sorting
 
-<img src="./assets/img/linsort3.svg" alt="plot of chunk unnamed-chunk-3" width="100%" style="display: block; margin: auto;" />
+<img src="./assets/img/linsort3.svg" width="100%" style="display: block; margin: auto;" />
 
 ---
 
 ## How does the tree form: lineage sorting
 
-<img src="./assets/img/linsort4.svg" alt="plot of chunk unnamed-chunk-4" width="100%" style="display: block; margin: auto;" />
+<img src="./assets/img/linsort4.svg" width="100%" style="display: block; margin: auto;" />
 
 ---
 
 ## How does the tree form: lineage sorting
 
-<img src="./assets/img/linsort5.svg" alt="plot of chunk unnamed-chunk-5" width="100%" style="display: block; margin: auto;" />
+<img src="./assets/img/linsort5.svg" width="100%" style="display: block; margin: auto;" />
 
 ---
 
@@ -125,11 +125,37 @@ strong {
 
 ## Fst
 
-- Fundamental approach
+Ht = expected* heterozygosity in total population
+
+Hs = average expected* heterozygosity within subpopulations
+
+*under HWE expectations
+
+### **Fst = Ht - Hs /  Ht**
+
+- Based on allele frequencies
 - Measures change in expected heterozygosity for subpopulations vs a single (big) population
 - Ranges from 0 (no subpopulations) to 1 (subpopulations fixed for different alleles)
-- Classically a single locus method, can be adapted for multiple loci
-- Especially useful for detecting selection and other processes
+- Indicates proportion of total variation structured between subpopulations
+- Also useful for detecting selection
+
+---
+
+## Fst
+
+<img src="./assets/img/fst1.svg" width="100%" style="display: block; margin: auto;" />
+
+---
+
+## Fst
+
+<img src="./assets/img/fst2.svg" width="100%" style="display: block; margin: auto;" />
+
+---
+
+## Fst
+
+<img src="./assets/img/fst3.svg" width="100%" style="display: block; margin: auto;" />
 
 --- &twocol
 
@@ -139,6 +165,7 @@ strong {
 
 - used for decades, modern implementation introduced in 2006
 - Analysis of individuals
+- Used allele variance relative to average
 - model free (does not assume populations)
 - Input is individual genotypes
 - PCA find a single continuous variable that explains largest proportion of the variation (PC1)
@@ -147,7 +174,7 @@ strong {
 
 *** =right
 
-<img src="assets/fig/unnamed-chunk-6-1.png" alt="plot of chunk unnamed-chunk-6" width="100%" style="display: block; margin: auto;" />
+<img src="assets/fig/unnamed-chunk-9-1.png" width="100%" style="display: block; margin: auto;" />
 
 ---
 
@@ -165,11 +192,36 @@ strong {
 
 ## STRUCTURE example
 
-<img src="./assets/img/Map_of_samples_and_population_structure_of_North_Africa_and_neighboring_populations.png" alt="plot of chunk unnamed-chunk-7" width="100%" style="display: block; margin: auto;" />
+<img src="./assets/img/Map_of_samples_and_population_structure_of_North_Africa_and_neighboring_populations.png" width="100%" style="display: block; margin: auto;" />
 
 --- .segue .dark 
 
 ## Population structure: discoveries
+
+--- &twocol
+
+## Hooded and carrion crows
+
+*** =left
+
+<img src="./assets/img/Nebelkrähe_Corvus_cornix,_Belvedere,_Wien.jpg" width="100%" style="display: block; margin: auto;" />
+
+*** =right
+
+<img src="./assets/img/Distribution_of_carrion_and_hooded_crows_across_Europe.jpg" width="100%" style="display: block; margin: auto;" />
+
+---
+
+## Genome-wide Fst
+
+<img src="./assets/img/cro.png" width="100%" style="display: block; margin: auto;" />
+
+---
+
+## Crow reading
+
+<embed src="./assets/img/1111crow410.full.pdf" width="100%" height="500" type="application/pdf" />
+
 
 --- &twocol
 
@@ -186,23 +238,9 @@ strong {
 
 *** =right
 
-<img src="./assets/img/leopard_map.svg" alt="plot of chunk unnamed-chunk-8" width="100%" style="display: block; margin: auto;" />
+<img src="./assets/img/leopard_map.svg" width="100%" style="display: block; margin: auto;" />
 
-<img src="./assets/img/drawing.svg" alt="plot of chunk unnamed-chunk-9" width="80%" style="display: block; margin: auto;" />
-
---- &twocol
-
-## Leopards
-
-*** =left
-
-<img src="./assets/img/leopard_pca.svg" alt="plot of chunk unnamed-chunk-10" width="100%" style="display: block; margin: auto;" />
-
-*** =right
-
-<img src="./assets/img/leopard_map.svg" alt="plot of chunk unnamed-chunk-11" width="100%" style="display: block; margin: auto;" />
-
-<img src="./assets/img/drawing.svg" alt="plot of chunk unnamed-chunk-12" width="80%" style="display: block; margin: auto;" />
+<img src="./assets/img/drawing.svg" width="80%" style="display: block; margin: auto;" />
 
 --- &twocol
 
@@ -210,60 +248,33 @@ strong {
 
 *** =left
 
-<img src="./assets/img/leopard_struct.svg" alt="plot of chunk unnamed-chunk-13" width="100%" style="display: block; margin: auto;" />
+<img src="./assets/img/leopard_pca.svg" width="100%" style="display: block; margin: auto;" />
 
 *** =right
 
-<img src="./assets/img/leopard_map.svg" alt="plot of chunk unnamed-chunk-14" width="100%" style="display: block; margin: auto;" />
+<img src="./assets/img/leopard_map.svg" width="100%" style="display: block; margin: auto;" />
 
-<img src="./assets/img/drawing.svg" alt="plot of chunk unnamed-chunk-15" width="80%" style="display: block; margin: auto;" />
+<img src="./assets/img/drawing.svg" width="80%" style="display: block; margin: auto;" />
+
+--- &twocol
+
+## Leopards
+
+*** =left
+
+<img src="./assets/img/leopard_struct.svg" width="100%" style="display: block; margin: auto;" />
+
+*** =right
+
+<img src="./assets/img/leopard_map.svg" width="100%" style="display: block; margin: auto;" />
+
+<img src="./assets/img/drawing.svg" width="80%" style="display: block; margin: auto;" />
 
 ---
 
 ## Leopard reading
 
-<embed src="./assets/img/Paijmans et al. - 2021 - African and Asian leopards are highly differentiated at the genomic level.pdf" title="plot of chunk unnamed-chunk-16" width="100%" height="500" type="application/pdf" />
-
---- &twocol
-
-## Brown hyena (*Parahyeana brunnea*)
-
-*** =left
-
-- Rarest of 4 hyena species
-- Southern African endemic
-- Listed near threatened by IUCN
-- Very low genetic diversity
-- Previous msat studies found no detectable structure
-- Hence no management units for conservation
-
-*** =right
-
-<img src="./assets/img/brown.webp" alt="plot of chunk unnamed-chunk-17" width="100%" style="display: block; margin: auto;" />
-
---- &twocol
-
-## Brown hyena (*Parahyeana brunnea*)
-
-*** =left
-
-<img src="./assets/img/brown_pca.svg" alt="plot of chunk unnamed-chunk-18" width="100%" style="display: block; margin: auto;" />
-
-*** =right
-
-<img src="./assets/img/brown_map.svg" alt="plot of chunk unnamed-chunk-19" width="100%" style="display: block; margin: auto;" />
-
----
-
-## Brown hyena (*Parahyeana brunnea*)
-
-<img src="./assets/img/brown_pcas.svg" alt="plot of chunk unnamed-chunk-20" width="90%" style="display: block; margin: auto;" />
-
----
-
-## Brown hyena reading
-
-<embed src="./assets/img/Westbury et al. - 2018.pdf" title="plot of chunk unnamed-chunk-21" width="100%" height="500" type="application/pdf" />
+<embed src="./assets/img/Paijmans et al. - 2021 - African and Asian leopards are highly differentiated at the genomic level.pdf" width="100%" height="500" type="application/pdf" />
 
 --- &twocol
 
@@ -279,21 +290,21 @@ strong {
 
 *** =right
 
-<img src="./assets/img/Tiger-Shark-Pictures.jpg" alt="plot of chunk unnamed-chunk-22" width="100%" style="display: block; margin: auto;" />
+<img src="./assets/img/Tiger-Shark-Pictures.jpg" width="100%" style="display: block; margin: auto;" />
 
 --- bg:white
 
 ## Tiger sharks
 
-<img src="./assets/img/tiger_str.svg" alt="plot of chunk unnamed-chunk-23" width="100%" style="display: block; margin: auto;" />
+<img src="./assets/img/tiger_str.svg" width="100%" style="display: block; margin: auto;" />
 
-<img src="./assets/img/tiger_map.svg" alt="plot of chunk unnamed-chunk-24" width="85%" style="display: block; margin: auto;" />
+<img src="./assets/img/tiger_map.svg" width="85%" style="display: block; margin: auto;" />
 
 ---
 
 ## Tiger shark reading
 
-<embed src="./assets/img/esab046.pdf" title="plot of chunk unnamed-chunk-25" width="100%" height="500" type="application/pdf" />
+<embed src="./assets/img/esab046.pdf" width="100%" height="500" type="application/pdf" />
 
 --- &twocol
 
@@ -305,12 +316,22 @@ strong {
 - Nine subspecies more or less accepted
 - Overall listed as vulnerable by IUCN
 - Some subspecies are critically endangered
-- Previous multilocus phylogenetics study proposed for species
-- Controversial!
 
 *** =right
 
-<img src="./assets/img/800px-Rothschild's_Giraffe_(Giraffa_camelopardalis_rothschildi)_male_(7068054987),_crop_&_edit.jpg" alt="plot of chunk unnamed-chunk-26" width="80%" style="display: block; margin: auto;" />
+<img src="./assets/img/800px-Rothschild's_Giraffe_(Giraffa_camelopardalis_rothschildi)_male_(7068054987),_crop_&_edit.jpg" width="80%" style="display: block; margin: auto;" />
+
+---
+
+## Four giraffe species?
+
+<embed src="./assets/img/Fennessy et al. - 2016 - Multi-locus Analyses Reveal Four Giraffe Species Instead of One.pdf" width="100%" height="500" type="application/pdf" />
+
+---
+
+## Four giraffe species?
+
+<embed src="./assets/img/Bercovitch et al. - 2017 - How many species of giraffe are there.pdf" width="100%" height="500" type="application/pdf" />
 
 --- &twocol
 
@@ -318,11 +339,11 @@ strong {
 
 *** =left
 
-<img src="./assets/img/giraffe_map.svg" alt="plot of chunk unnamed-chunk-27" width="100%" style="display: block; margin: auto;" />
+<img src="./assets/img/giraffe_map.svg" width="100%" style="display: block; margin: auto;" />
 
 *** =right
 
-<img src="./assets/img/giraffe_pca.svg" alt="plot of chunk unnamed-chunk-28" width="100%" style="display: block; margin: auto;" />
+<img src="./assets/img/giraffe_pca.svg" width="100%" style="display: block; margin: auto;" />
 
 --- &twocol
 
@@ -330,23 +351,23 @@ strong {
 
 *** =left
 
-<img src="./assets/img/giraffe_map.svg" alt="plot of chunk unnamed-chunk-29" width="100%" style="display: block; margin: auto;" />
+<img src="./assets/img/giraffe_map.svg" width="100%" style="display: block; margin: auto;" />
 
 *** =right
 
-<img src="./assets/img/giraffe_stru.svg" alt="plot of chunk unnamed-chunk-30" width="100%" style="display: block; margin: auto;" />
+<img src="./assets/img/giraffe_stru.svg" width="100%" style="display: block; margin: auto;" />
 
 ---
 
 ## Giraffes
 
-<img src="./assets/img/giraffe_fin.svg" alt="plot of chunk unnamed-chunk-31" width="100%" style="display: block; margin: auto;" />
+<img src="./assets/img/giraffe_fin.svg" width="100%" style="display: block; margin: auto;" />
 
 ---
 
 ## Giraffe reading
 
-<embed src="./assets/img/giraffe.pdf" title="plot of chunk unnamed-chunk-32" width="100%" height="500" type="application/pdf" />
+<embed src="./assets/img/giraffe.pdf" width="100%" height="500" type="application/pdf" />
 
 --- &thankyou
 
